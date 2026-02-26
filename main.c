@@ -1,8 +1,9 @@
 #include <stdio.h>
 int main(int argc, char **argv) {
+    FILE *f;
     if (argc >= 3) {
         for (int i = 1; i < argc; i++) {
-            FILE *f = fopen(argv[i], "r");
+            f = fopen(argv[i], "r");
             if (!f) {
                 perror(argv[1]);
                 return 1;
@@ -23,7 +24,7 @@ int main(int argc, char **argv) {
         return 1;
     }
     else {
-        FILE *f = fopen(argv[1], "r");
+        f = fopen(argv[1], "r");
         if (!f) {
             perror(argv[1]);
             return 1;
