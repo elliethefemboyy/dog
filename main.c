@@ -22,6 +22,7 @@ int main(int argc, char **argv) {
         }
         return 0;
     }
+    // fallback for no args
         while ((ch = fgetc(stdin)) != EOF) {
             putchar(ch);
         }
