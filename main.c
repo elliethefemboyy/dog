@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main(int argc, char **argv) {
-    FILE *f;
     if (argc >= 2) {
+        FILE *f;
         for (int i = 1; i < argc; i++) {
-            if (i == 1 && argv[i][0] == '-') {
-                fprintf(stderr, "Flags not implemented");
+            if (argv[i][0] == '-') {
+                fprintf(stderr, "Flags not implemented\n");
                 return 1;
             }
             else {
@@ -17,15 +17,14 @@ int main(int argc, char **argv) {
                 while ((ch = fgetc(f)) != EOF) {
                     putchar(ch);
                 }
+                fclose(f);
             }
         }
         return 0;
     }
-    else {
         int ch;
         while ((ch = fgetc(stdin)) != EOF) {
             putchar(ch);
         }
-        return 1;
-    }
+        return 0;
 }
