@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
         for (int i = 1; i < argc; i++) {
             f = fopen(argv[i], "r");
             if (!f) {
-                perror(argv[1]);
+                perror(argv[i]);
                 return 1;
             }
             int ch;
