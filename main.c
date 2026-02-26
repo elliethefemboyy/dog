@@ -1,5 +1,6 @@
 #include <stdio.h>
 int main(int argc, char **argv) {
+    int ch;
     if (argc >= 2) {
         FILE *f;
         for (int i = 1; i < argc; i++) {
@@ -13,7 +14,6 @@ int main(int argc, char **argv) {
                     perror(argv[i]);
                     return 1;
                 }
-                int ch;
                 while ((ch = fgetc(f)) != EOF) {
                     putchar(ch);
                 }
@@ -22,7 +22,6 @@ int main(int argc, char **argv) {
         }
         return 0;
     }
-        int ch;
         while ((ch = fgetc(stdin)) != EOF) {
             putchar(ch);
         }
