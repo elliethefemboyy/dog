@@ -3,7 +3,7 @@ int main(int argc, char **argv) {
     if (argc >= 2) {
         FILE *f;
         for (int i = 1; i < argc; i++) {
-            if (argv[i][0] == '-') {
+            if (argv[i] && argv[i][0] == '-') {
                 fprintf(stderr, "Flags not implemented\n");
                 return 1;
             }
