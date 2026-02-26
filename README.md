@@ -1,3 +1,3 @@
 # DOG
-## short for condoganate
+## short for condogenate
 silly cat clone made in C
