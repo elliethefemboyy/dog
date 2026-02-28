@@ -10,18 +10,24 @@ void process_file(FILE *f) {
     }
 }
 
-int main(const int argc, char **argv) {
+int main(const int argc, const char *argv[]) {
     if (argc >= 2) {
+        int failures = 0;
            for (int i = 1; i < argc; i++) { // main concat
                 FILE *f = fopen(argv[i], "r");
                if (!f) {
                    perror(argv[i]);
+                   failures++;
+                   fclose(f);
+                   continue;
                }
                process_file(f);
                 fclose(f);
             }
-        fflush(stdout);
-        exit(0);
+        if (failures > 0) {
+          exit(0);
+        }
+       exit(1);
         }
     process_file(stdin);
         exit(0);
