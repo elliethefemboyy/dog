@@ -5,7 +5,7 @@
 void process_file(FILE *f) {
     char *buffer = malloc(MAX_SIZE);
     size_t bytesRead;
-    while ((bytesRead = fread(buffer, 1, sizeof(buffer), f)) > 0) {
+    while ((bytesRead = fread(buffer, 1, MAX_SIZE, f)) > 0) {
         fwrite(buffer, 1, bytesRead, stdout);
     }
     free(buffer);
