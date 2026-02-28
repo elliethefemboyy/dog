@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #define MAX_SIZE 8192
 int main(const int argc, char **argv) {
-    int ch;
     if (argc >= 2) {
            for (int i = 1; i < argc; i++) { // main concat
                 FILE *f = fopen(argv[i], "r");
@@ -22,7 +21,7 @@ int main(const int argc, char **argv) {
         exit(0);
         }
     // fallback for no args
-
+    int ch;
     while ((ch = fgetc(stdin)) != EOF) {
             putchar(ch);
         }
